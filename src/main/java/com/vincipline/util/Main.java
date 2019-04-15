@@ -4,13 +4,16 @@ package com.vincipline.util;
 //import java.sql.ResultSet;
 
 import com.vincipline.util.service.HibernateService;
+import com.vincipline.util.service.ImporterService;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        HibernateService hibernateService = new HibernateService();
-        hibernateService.run();
+        //HibernateService hibernateService = new HibernateService();
+        //hibernateService.run();
+        ImporterService importerService = new ImporterService();
+        importerService.run();
 
         //MySQLService mysqlService = new MySQLService();
         //ResultSet    rs           = mysqlService.query("SELECT * FROM city limit 5;");

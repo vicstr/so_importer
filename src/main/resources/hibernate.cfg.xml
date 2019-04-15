@@ -6,17 +6,22 @@
 <hibernate-configuration>
     <session-factory>
         <!-- SQL Dialect -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
 
         <!-- Database Connection Settings -->
 <!--        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>-->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/world</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/stackoverflow?createDatabaseIfNotExist=true</property>
+
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">12345</property>
         <property name="show_sql">true</property>
 
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
         <!-- Specifying Session Context -->
         <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+        <property name="cache.providerclass">org.hibernate.NoCacheProvider</property>
+
 
         <!-- Mapping With Model Class Containing Annotations -->
         <mapping class="com.vincipline.util.entity.City" />
